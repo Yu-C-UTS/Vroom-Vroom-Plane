@@ -23,7 +23,7 @@ public class MovementBehavior : MonoBehaviour
 
     void LateUpdate() 
     {
-        movementVector -= InputManager.Instance.CurrentMovementV3 * Time.deltaTime;
+        movementVector -= InputManager.Instance.CurrentMovementV3 * GameManager.Instance.PlayerSpeed * Time.deltaTime;
 
         transform.position += movementVector;
     }
