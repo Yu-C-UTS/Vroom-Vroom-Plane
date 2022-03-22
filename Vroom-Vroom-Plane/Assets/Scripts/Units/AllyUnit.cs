@@ -25,9 +25,29 @@ public class AllyUnit : UnitBase
         Death();
     }
 
+    public override void PlaneCollide(UnitBase CollidedUnit)
+    {
+        switch (CollidedUnit.UnitFaction)
+        {
+            case EUnitFaction.Player:
+                break;
+
+            case EUnitFaction.Enemy:
+                break;
+
+            case EUnitFaction.Ally:
+                return;
+            
+            default:
+                throw new System.Exception("Unit Faction: " + CollidedUnit.UnitFaction.ToString());
+        }
+
+        Death();
+    }
+
     protected override void Death()
     {
-        print("Death");
+        print("Death: " + gameObject.name);
         Destroy(gameObject);
     }
 

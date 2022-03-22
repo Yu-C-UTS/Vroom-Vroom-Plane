@@ -25,6 +25,17 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        UnitBase CollidedUnit = other.gameObject.GetComponent<UnitBase>();
+
+        //Collided with something that is not a unit(plane), ignoring collision
+        if(CollidedUnit == null)
+        {
+            return;
+        }
+
+        HitUnit(CollidedUnit);
+
+        /*
         // GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
         Destroy(gameObject);
@@ -43,5 +54,16 @@ public class Bullet : MonoBehaviour
         Destroy(other.gameObject);
         Debug.Log("Something is hit!");
         //FindObjectOfType<Health>().doDamage(damage);
+        */
+    }
+
+    private void HitUnit(UnitBase otherUnit)
+    {
+        // GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
+        // Destroy(effect, 5f);
+
+        otherUnit.BulletHit(this);
+
+        Destroy(gameObject);
     }
 }
