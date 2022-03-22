@@ -13,7 +13,7 @@ public class MovementBehavior : MonoBehaviour
 
     void Start()
     {
-
+        facingDirection = DirectionsUtil.Direction.Right;
     }
 
     void Update()
