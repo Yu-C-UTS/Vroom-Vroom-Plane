@@ -34,6 +34,10 @@ public class MovementBehavior : MonoBehaviour
         movementVector = DirectionsUtil.DirectionToVector2(facingDirection) * Speed * Time.deltaTime;
     }
 
+    void OnBecameInvisible(){
+        Destroy(gameObject);
+    }
+
     void LateUpdate() 
     {
         movementVector -= (Vector3)InputManager.Instance.CurrentMovementV2 * GameManager.Instance.PlayerSpeed * Time.deltaTime;
