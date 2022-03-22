@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class AllyUnit : UnitBase
 { 
-    protected new EUnitFaction _unitFaction = EUnitFaction.Ally;
+    private void Awake() 
+    {
+        _unitFaction = EUnitFaction.Ally;     
+    }
 
     public override void BulletHit(Bullet HitBullet)
     {

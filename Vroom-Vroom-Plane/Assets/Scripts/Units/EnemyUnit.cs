@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemyUnit : UnitBase
 {
-    protected new EUnitFaction _unitFaction = EUnitFaction.Enemy;
-
+    private void Awake() 
+    {
+        _unitFaction = EUnitFaction.Enemy;     
+    }
     public override void BulletHit(Bullet HitBullet)
     {
         switch (HitBullet.BulletSource)
