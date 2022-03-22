@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8730738673013871337}
   - component: {fileID: 8730738673013871338}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: Ally
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 534080211, guid: f9b5cb7845cbb43e7b68a3b8643c5543, type: 3}
+  m_Sprite: {fileID: -788770493, guid: 7f74af3970ae9475192612e07efa543b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 8730738673013871339}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7488d1af237cf4269870fdde2d55640c, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa3ddb23987d84ae99cf1ad031ec7333, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b93e1b23f0f014a8315c4ee71ce647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingDirection: 3
+  facingDirection: 5
   Speed: 10
   DircChangeGap: 0
 --- !u!114 &8730738673013871338
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interpolationPeriod: 1
   firePoint: {fileID: 8730738673487948777}
-  bulletPrefab: {fileID: 3466249109974079377, guid: 520dab60f9ee4ad45b3e70b7f8d53307, type: 3}
+  bulletPrefab: {fileID: 3466249109974079377, guid: b01dd885de1125049a62fdb213c8870e, type: 3}
   bulletForce: 20
 --- !u!1 &8730738673487948778
 GameObject:
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8730738673487948777}
   m_Layer: 0
-  m_Name: EnemyFirePoint
+  m_Name: AllyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
