@@ -20,7 +20,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
