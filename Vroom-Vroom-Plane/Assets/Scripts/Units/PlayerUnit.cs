@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AllyUnit : UnitBase
-{ 
-    protected new EUnitFaction _unitFaction = EUnitFaction.Ally;
+public class PlayerUnit : UnitBase
+{
+    protected new EUnitFaction _unitFaction = EUnitFaction.Player;
 
     public override void BulletHit(Bullet HitBullet)
     {
         switch (HitBullet.BulletSource)
         {
             case Bullet.EBulletSource.Player:
-                break;
+                return;
 
             case Bullet.EBulletSource.Enemy:
                 break;
@@ -31,13 +31,13 @@ public class AllyUnit : UnitBase
         switch (CollidedUnit.UnitFaction)
         {
             case EUnitFaction.Player:
-                break;
+                return;
 
             case EUnitFaction.Enemy:
                 break;
 
             case EUnitFaction.Ally:
-                return;
+                break;
             
             default:
                 throw new System.Exception("Unit Faction: " + CollidedUnit.UnitFaction.ToString());
@@ -51,5 +51,4 @@ public class AllyUnit : UnitBase
         print("Death: " + gameObject.name);
         Destroy(gameObject);
     }
-
 }

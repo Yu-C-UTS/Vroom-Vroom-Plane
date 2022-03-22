@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AllyUnit : UnitBase
-{ 
-    protected new EUnitFaction _unitFaction = EUnitFaction.Ally;
+public class EnemyUnit : UnitBase
+{
+    protected new EUnitFaction _unitFaction = EUnitFaction.Enemy;
 
     public override void BulletHit(Bullet HitBullet)
     {
@@ -14,10 +14,10 @@ public class AllyUnit : UnitBase
                 break;
 
             case Bullet.EBulletSource.Enemy:
-                break;
+                return;
 
             case Bullet.EBulletSource.Ally:
-                return;
+                break;
             
             default:
                 throw new System.Exception("Unknown Bullet Source");
@@ -34,10 +34,10 @@ public class AllyUnit : UnitBase
                 break;
 
             case EUnitFaction.Enemy:
-                break;
+                return;
 
             case EUnitFaction.Ally:
-                return;
+                break;
             
             default:
                 throw new System.Exception("Unit Faction: " + CollidedUnit.UnitFaction.ToString());
@@ -51,5 +51,4 @@ public class AllyUnit : UnitBase
         print("Death: " + gameObject.name);
         Destroy(gameObject);
     }
-
 }

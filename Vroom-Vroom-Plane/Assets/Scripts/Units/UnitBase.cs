@@ -7,7 +7,14 @@ public class UnitBase : MonoBehaviour
     public enum EUnitFaction
     {Player, Enemy, Ally}
 
-    public EUnitFaction UnitFaction;
+    protected EUnitFaction _unitFaction;
+    public EUnitFaction UnitFaction
+    {
+        get
+        {
+            return _unitFaction;
+        }
+    }
 
     public virtual void BulletHit(Bullet HitBullet)
     {
