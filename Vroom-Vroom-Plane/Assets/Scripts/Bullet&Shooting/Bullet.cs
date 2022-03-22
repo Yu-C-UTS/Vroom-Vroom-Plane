@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public enum EBulletSource
+    {Player, Enemy, Ally}
+
     public GameObject HitEffect;
     public float damage;
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+    
+    [SerializeField]
+    private EBulletSource _bulletSource;
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    public EBulletSource BulletSource
+    {
+        get
+        {
+            return _bulletSource;
+        }
+    }
 
     void OnCollisionEnter(Collision other)
     {
