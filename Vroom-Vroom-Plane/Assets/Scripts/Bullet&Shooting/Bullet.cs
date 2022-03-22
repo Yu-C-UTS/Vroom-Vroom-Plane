@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject HitEffect;
-    public float damage;
+    //public float damage;
     // // Start is called before the first frame update
     // void Start()
     // {
@@ -23,6 +23,20 @@ public class Bullet : MonoBehaviour
         // GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
         Destroy(gameObject);
-        FindObjectOfType<Health>().doDamage(damage);
+        if(other.gameObject.tag == "Enemy" )
+        {
+            FindObjectOfType<ScoreBoard>().KillEnemy();
+            Debug.Log("Enemy Hit!");
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "Player")
+        {
+            Debug.Log("Player Hit!");
+            Destroy(other.gameObject);
+        }
+        Destroy(other.gameObject);
+        Debug.Log("Something is hit!");
+        //FindObjectOfType<Health>().doDamage(damage);
     }
 }
