@@ -27,7 +27,7 @@ public class MovementBehavior : MonoBehaviour
         }
 
         if(DircChangeTimer <= 0){
-            facingDirection = (DirectionsUtil.Direction)(((int)facingDirection + Random.Range(-1, 1) + 8)%8);
+            facingDirection = (DirectionsUtil.Direction)(((int)facingDirection + Random.Range(-1, 2) + 8)%8);
             DircChangeTimer = DircChangeGap;
         }
 
