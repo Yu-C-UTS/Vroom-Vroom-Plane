@@ -62,7 +62,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8730738673013871339, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_Name
-      value: enemy (3)
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8730738673013871342, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_RootOrder
@@ -124,7 +124,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8730738673013871339, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_Name
-      value: enemy (1)
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8730738673013871342, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_RootOrder
@@ -186,7 +186,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8730738673013871339, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_Name
-      value: enemy (4)
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8730738673013871342, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_RootOrder
@@ -248,7 +248,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8730738673013871339, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_Name
-      value: enemy (5)
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8730738673013871342, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_RootOrder
@@ -310,7 +310,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8730738673013871339, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_Name
-      value: enemy (2)
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8730738673013871342, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_RootOrder
@@ -372,7 +372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8730738673013871339, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_Name
-      value: enemy (6)
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8730738673013871342, guid: 1ad4f850cb407ea4b8ae5e8e72d806e0, type: 3}
       propertyPath: m_RootOrder

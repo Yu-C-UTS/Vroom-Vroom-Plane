@@ -6,27 +6,33 @@ public class FormationManager : MonoBehaviour
 {
     public GameObject formation;
     public GameObject startPoint;
-    public float DircChangeGap;
 
     [SerializeField]
     private DirectionsUtil.Direction startFacingDirection;
+    private int spawnedlimiter = 0;
 
-    private float DircChangeTimer;
+
 
     void Awake()
     {
-        formation.GetComponent<MovementBehavior>().setFacingDirect(startFacingDirection);
         spawn();
-    }
-    void Start(){
-        DircChangeTimer = DircChangeGap;
     }
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length <= 0){
+            Debug.Log("clear");
+            if(spawnedlimiter < 1){
+                spawnedlimiter++;
+                Invoke("spawn", 1.0f);
+            }
+            
+        }
     }
 
     private void spawn(){
+        formation.GetComponent<MovementBehavior>().setFacingDirect(startFacingDirection);
         Instantiate(formation, startPoint.transform.position, Quaternion.Euler(0, 0, -135));
+        spawnedlimiter = 0;
     }
 }
