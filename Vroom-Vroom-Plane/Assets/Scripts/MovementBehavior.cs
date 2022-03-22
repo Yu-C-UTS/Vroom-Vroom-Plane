@@ -32,6 +32,9 @@ public class MovementBehavior : MonoBehaviour
         }
 
         movementVector = DirectionsUtil.DirectionToVector2(facingDirection) * Speed * Time.deltaTime;
+        if(Vector3.Distance(transform.position, new Vector3(0,0,0)) > 30){
+            Destroy(gameObject);
+        }
     }
 
     void OnBecameInvisible(){

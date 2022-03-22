@@ -9,7 +9,8 @@ public class FormationManager : MonoBehaviour
 
     [SerializeField]
     private DirectionsUtil.Direction startFacingDirection;
-    private GameObject[] planes;
+    private int spawnedlimiter = 0;
+
 
 
     void Awake()
@@ -21,12 +22,17 @@ public class FormationManager : MonoBehaviour
     {
         if(GameObject.FindGameObjectsWithTag("Enemy").Length <= 0){
             Debug.Log("clear");
-            spawn();
+            if(spawnedlimiter < 1){
+                spawnedlimiter++;
+                Invoke("spawn", 1.0f);
+            }
+            
         }
     }
 
     private void spawn(){
         formation.GetComponent<MovementBehavior>().setFacingDirect(startFacingDirection);
         Instantiate(formation, startPoint.transform.position, Quaternion.Euler(0, 0, -135));
+        spawnedlimiter = 0;
     }
 }
