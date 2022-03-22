@@ -13,7 +13,7 @@ public class MovementBehavior : MonoBehaviour
 
     void Start()
     {
-        facingDirection = DirectionsUtil.Direction.Right;
+        
     }
 
     void Update()
@@ -26,5 +26,13 @@ public class MovementBehavior : MonoBehaviour
         movementVector -= (Vector3)InputManager.Instance.CurrentMovementV2 * GameManager.Instance.PlayerSpeed * Time.deltaTime;
 
         transform.position += movementVector;
+    }
+
+    public void setFacingDirect(DirectionsUtil.Direction newDirection){
+        facingDirection = newDirection;
+    }
+
+    public DirectionsUtil.Direction getFacingDirect(){
+        return facingDirection;
     }
 }
