@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: defb95694ec5241478e5eae010c23d49
+guid: 7f74af3970ae9475192612e07efa543b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -38,7 +38,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: big-fragments_0
+      name: friendly-sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 16
+        y: 16
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb12ab7fb2a084461ac1645b24b83288
-      internalID: -937653753
+      spriteID: 777d2a254a83e4105947c74cdbc390b1
+      internalID: -788770493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big-fragments_1
+      name: friendly-sheet_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 73
+        y: 16
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 893e1093a368c487f87836aee5b42626
-      internalID: 1547241935
+      spriteID: dcd12d439eb11479b843cb92e76b0756
+      internalID: -499677455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: big-fragments_2
+      name: friendly-sheet_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 130
+        y: 16
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,71 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e96a1c3727d7d4f27aa7be22b7209468
-      internalID: -219460452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: big-fragments_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65c18e5916d7c425a9d6c7b44854778d
-      internalID: 1975405073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: big-fragments_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38da10bb45b2e4c6d85d0d91c46f0b07
-      internalID: -1121930146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: big-fragments_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fa958f7b203b4417b41eeee4f365f47
-      internalID: -381380272
+      spriteID: 5c9b6ba95c7d64351b274e7794259fb4
+      internalID: -1703577656
       vertices: []
       indices: 
       edges: []
@@ -244,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3d53df523dd4a48b4bc253ec369cc968
     internalID: 0
     vertices: []
     indices: 
@@ -252,12 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      big-fragments_4: -1121930146
-      big-fragments_1: 1547241935
-      big-fragments_5: -381380272
-      big-fragments_2: -219460452
-      big-fragments_3: 1975405073
-      big-fragments_0: -937653753
+      friendly-sheet_0: -788770493
+      friendly-sheet_2: -1703577656
+      friendly-sheet_1: -499677455
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
