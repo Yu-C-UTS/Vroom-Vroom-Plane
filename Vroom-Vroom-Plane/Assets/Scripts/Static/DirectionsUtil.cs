@@ -11,7 +11,7 @@ public static class DirectionsUtil
 
     public static float DirectionToRotation(Direction direction)
     {
-        return 45 * (int)direction;
+        return -45 * (int)direction;
     }
 
     public static Vector2 DirectionToVector2(Direction direction)
