@@ -13,27 +13,20 @@ public class FormationManager : MonoBehaviour
 
     private float DircChangeTimer;
 
-    // Start is called before the first frame update
     void Awake()
     {
-        Instantiate(formation, startPoint.transform.position, Quaternion.Euler(0, 0, -135));
         formation.GetComponent<MovementBehavior>().setFacingDirect(startFacingDirection);
+        spawn();
+    }
+    void Start(){
         DircChangeTimer = DircChangeGap;
     }
     // Update is called once per frame
     void Update()
     {
-        if(DircChangeTimer > 0){
-            DircChangeTimer -= Time.deltaTime;
-        }
-
-        if(DircChangeTimer <= 0){
-            formation.GetComponent<MovementBehavior>().setFacingDirect(newDirection());
-            DircChangeTimer = DircChangeGap;
-        }
     }
 
-    private DirectionsUtil.Direction newDirection(){
-        return (DirectionsUtil.Direction)Random.Range(0, 6);
+    private void spawn(){
+        Instantiate(formation, startPoint.transform.position, Quaternion.Euler(0, 0, -135));
     }
 }
