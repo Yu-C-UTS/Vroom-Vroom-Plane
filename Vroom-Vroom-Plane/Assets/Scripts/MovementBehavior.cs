@@ -18,12 +18,12 @@ public class MovementBehavior : MonoBehaviour
 
     void Update()
     {
-        movementVector = DirectionsUtil.V2toV3YZSwap(DirectionsUtil.DirectionToVector2(facingDirection)) * Speed * Time.deltaTime;
+        movementVector = DirectionsUtil.DirectionToVector2(facingDirection) * Speed * Time.deltaTime;
     }
 
     void LateUpdate() 
     {
-        movementVector -= InputManager.Instance.CurrentMovementV3 * GameManager.Instance.PlayerSpeed * Time.deltaTime;
+        movementVector -= (Vector3)InputManager.Instance.CurrentMovementV2 * GameManager.Instance.PlayerSpeed * Time.deltaTime;
 
         transform.position += movementVector;
     }
