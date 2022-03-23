@@ -15,11 +15,22 @@ public class ScoreBoard : MonoBehaviour
     void Update()
     {
         DisplayScore(totalScore);
+        PlayerPrefs.SetInt("score", totalScore);
     }
 
     public void KillEnemy()
     {
         totalScore += 100;
+    }
+
+    public void KillBoss()
+    {
+        totalScore += 400;
+    }
+
+    public void PickupParachute()
+    {
+        totalScore += 50;
     }
 
     void DisplayScore(int scoreToDisplay)

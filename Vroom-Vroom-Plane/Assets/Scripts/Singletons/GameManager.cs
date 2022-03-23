@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource bgm;
+
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public int EnemyDestroyCount = 0;
 
+    public bool canShoot = true;
     void Awake() 
     {
         if(_instance != null)
@@ -31,13 +35,16 @@ public class GameManager : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(gameObject);
+        bgm.Play();
     }
 
     public void ResetGame()
     {
+        SceneManager.LoadScene("GameScene");
         PlayerLife = 5;
         PlayerScore = 0;
         EnemyDestroyCount = 0;
+        bgm.Play();
     }
 
     public void QueueRespawn()
@@ -68,5 +75,10 @@ public class GameManager : MonoBehaviour
             PlayerAnimUpdater playerAnim = player.GetComponent<PlayerAnimUpdater>();
             playerAnim.inputmanager = gameObject.GetComponent<InputManager>();
         }
+    }
+
+    public void Victory()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 }

@@ -7,6 +7,7 @@ public class GameAreaCheck : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         Debug.Log("Exit GameArea");
-        Destroy(other.gameObject);
+        // Destroy(other.gameObject);
+        other.gameObject.SetActive(false);
     }
 }

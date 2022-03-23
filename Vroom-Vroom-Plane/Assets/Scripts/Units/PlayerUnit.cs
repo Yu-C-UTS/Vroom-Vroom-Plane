@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerUnit : UnitBase
 {
+    [SerializeField] private AudioSource hitSfx;
     private void Awake() 
     {
         _unitFaction = EUnitFaction.Player;     
@@ -53,6 +54,7 @@ public class PlayerUnit : UnitBase
         GameManager.Instance.PlayerLife -= 1;
         GameManager.Instance.QueueRespawn();
         print("Death: " + gameObject.name);
+        hitSfx.Play();
         Destroy(gameObject);
     }
 }
