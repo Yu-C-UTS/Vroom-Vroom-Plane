@@ -30,11 +30,14 @@ public class EnemyShooting : MonoBehaviour
 
     void Shoot()
     {
+        if(GameManager.Instance.canShoot)
+        {
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.BulletDirection = DirectionsUtil.RotationToDirection(bullet.transform.rotation.eulerAngles.z);
         bullet.bulletSpeed = bulletSpeed;
         // Rigidbody rb = bullet.GetComponent<Rigidbody>();
         // rb.AddForce(firePoint.up * bulletSpeed, ForceMode.Impulse);
         Destroy(bullet, 3f);
+        }
     }
 }

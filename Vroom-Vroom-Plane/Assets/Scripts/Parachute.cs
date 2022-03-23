@@ -64,7 +64,7 @@ public class Parachute : MonoBehaviour
     private void OnCollisionEnter(Collision other) 
     {
         PlayerUnit CollidedPlayerUnit = other.gameObject.GetComponent<PlayerUnit>();
-
+        
         //Collided with something that is not a player unit(plane), ignoring collision
         if(CollidedPlayerUnit == null)
         {
