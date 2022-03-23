@@ -15,6 +15,7 @@ public class ScoreBoard : MonoBehaviour
     void Update()
     {
         DisplayScore(totalScore);
+        PlayerPrefs.SetInt("score", totalScore);
     }
 
     public void KillEnemy()
