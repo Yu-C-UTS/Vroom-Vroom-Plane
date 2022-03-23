@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     public float PlayerSpeed = 5f;
 
+    public int PlayerLife = 5;
+    public float PlayerScore = 0f;
+
+    public int EnemyDestroyCount = 0;
+
     void Awake() 
     {
         if(_instance != null)
@@ -27,6 +32,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
+    public void ResetGame()
+    {
+        PlayerLife = 5;
+        PlayerScore = 0;
+        EnemyDestroyCount = 0;
+    }
 
 }
