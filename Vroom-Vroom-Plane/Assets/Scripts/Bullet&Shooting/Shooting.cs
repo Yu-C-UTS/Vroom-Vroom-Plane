@@ -52,6 +52,7 @@ public class Shooting : MonoBehaviour
     {
         if (fireCooldown <= 0) 
         {
+            barrageFireCooldown = 0;
             remainingBarrageCount = barrageFireCount;
             fireCooldown = interpolationPeriod;
         }
