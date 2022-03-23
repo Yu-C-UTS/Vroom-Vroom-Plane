@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3031043463077099002}
   - component: {fileID: 5598073012584017827}
+  - component: {fileID: 7946506486959682525}
+  - component: {fileID: -7878029334978416296}
   m_Layer: 0
   m_Name: pwSpeed
   m_TagString: Untagged
@@ -84,3 +86,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7946506486959682525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218352552525509137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b93e1b23f0f014a8315c4ee71ce647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _facingDirection: 0
+  _speed: 10
+--- !u!114 &-7878029334978416296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218352552525509137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c46a444dad4aad4e9d19dd655077bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6429144533622571649}
   - component: {fileID: 5408260146377361933}
+  - component: {fileID: -4129791334229618921}
+  - component: {fileID: -2211301143647469455}
   m_Layer: 0
   m_Name: pwInvince
   m_TagString: Untagged
@@ -84,3 +86,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4129791334229618921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166772263894515296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b93e1b23f0f014a8315c4ee71ce647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _facingDirection: 0
+  _speed: 10
+--- !u!114 &-2211301143647469455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166772263894515296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1abfb74c2d68d489f8a2ba7d109ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

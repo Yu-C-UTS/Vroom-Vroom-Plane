@@ -13,7 +13,7 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     private float barrageFireDelay = 0.5f;
     [SerializeField]
-    private int barrageFireCount = 2;
+    public int barrageFireCount = 2;
     private float barrageFireCooldown;
     private int remainingBarrageCount;
 

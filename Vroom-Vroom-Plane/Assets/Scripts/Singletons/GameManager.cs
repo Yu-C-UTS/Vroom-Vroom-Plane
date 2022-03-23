@@ -16,6 +16,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private PlayerUnit _activePlayerUnit;
+    public PlayerUnit ActivePlayerUnit
+    {
+        get
+        {
+            return _activePlayerUnit;
+        }
+        set
+        {
+            _activePlayerUnit = value;
+        }
+    }
+
     public PlayerUnit PlayerPrefab;
     public float PlayerSpeed = 5f;
 
@@ -44,6 +57,7 @@ public class GameManager : MonoBehaviour
         PlayerLife = 5;
         PlayerScore = 0;
         EnemyDestroyCount = 0;
+        PlayerSpeed = 5;
         bgm.Play();
     }
 
@@ -53,9 +67,9 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator DelayRespawn()
     {
-        Debug.Log("Before Respawn Yield: " +Time.time);
+        //Debug.Log("Before Respawn Yield: " +Time.time);
         yield return new WaitForSeconds(5);
-        Debug.Log("After Respawn Yield: "+Time.time);
+        //Debug.Log("After Respawn Yield: "+Time.time);
         RespawnPlayer();
     }
 
