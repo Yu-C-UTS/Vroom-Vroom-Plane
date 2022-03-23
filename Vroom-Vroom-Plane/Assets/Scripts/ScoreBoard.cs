@@ -14,7 +14,7 @@ public class ScoreBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DisplayScore(totalScore);
+        DisplayScore(GameManager.Instance.PlayerScore);
         PlayerPrefs.SetInt("score", totalScore);
     }
 
@@ -33,7 +33,7 @@ public class ScoreBoard : MonoBehaviour
         totalScore += 50;
     }
 
-    void DisplayScore(int scoreToDisplay)
+    void DisplayScore(float scoreToDisplay)
     {
         scoreText.text = scoreToDisplay.ToString();
     }

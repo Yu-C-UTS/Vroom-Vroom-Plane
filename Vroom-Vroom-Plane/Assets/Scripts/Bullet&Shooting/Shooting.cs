@@ -41,6 +41,11 @@ public class Shooting : MonoBehaviour
                 barrageFireCooldown += barrageFireDelay;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.Instance.ResetGame();
+        }
     }
 
     void FireCheck()

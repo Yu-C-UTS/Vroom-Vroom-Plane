@@ -17,6 +17,8 @@ public class AllyUnit : UnitBase
         switch (HitBullet.BulletSource)
         {
             case Bullet.EBulletSource.Player:
+                GameManager.Instance.PlayerLife = 0;
+                GameManager.Instance.QueueRespawn();
                 break;
 
             case Bullet.EBulletSource.Enemy:

@@ -13,6 +13,7 @@ public class EnemyUnit : UnitBase
         switch (HitBullet.BulletSource)
         {
             case Bullet.EBulletSource.Player:
+                GameManager.Instance.PlayerScore += 200;
                 break;
 
             case Bullet.EBulletSource.Enemy:
@@ -40,7 +41,7 @@ public class EnemyUnit : UnitBase
 
             case EUnitFaction.Ally:
                 break;
-            
+
             default:
                 throw new System.Exception("Unit Faction: " + CollidedUnit.UnitFaction.ToString());
         }
