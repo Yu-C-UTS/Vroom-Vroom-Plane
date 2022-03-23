@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerUnit : UnitBase
 {
-    [SerializeField] private AudioClip hitSfx;
+    [SerializeField] private AudioSource hitSfx;
     private void Awake() 
     {
         GetComponent<PlayerAnimUpdater>().inputmanager = GameManager.Instance.GetComponent<InputManager>();
@@ -55,7 +55,7 @@ public class PlayerUnit : UnitBase
         GameManager.Instance.PlayerLife -= 1;
         GameManager.Instance.QueueRespawn();
         print("Death: " + gameObject.name);
-        AudioSource.PlayClipAtPoint(hitSfx, transform.position);
+        hitSfx.Play();
         Destroy(gameObject);
     }
 }
