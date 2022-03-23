@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void DeathSequence(){
+        CameraShake cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+        StartCoroutine(cameraShake.Shake(.15f, 1f));
         if(PlayerLife <= 0){
             bgm.Stop();
             Death.Play();
@@ -136,15 +138,12 @@ public class GameManager : MonoBehaviour
 
     private void pauseGame(){
         gameObject.GetComponent<InputManager>().enabled = false;
-        GameObject.FindWithTag("AllyFormation").GetComponent<FormationController>().enabled = false;
-        GameObject.FindWithTag("EnemyFormation").GetComponent<EnemyFormationController>().enabled = false;
+        canShoot = false;
     }
 
     private void resumeGame(){
         gameObject.GetComponent<InputManager>().enabled = true;
-        GameObject.FindWithTag("AllyFormation").GetComponent<FormationController>().enabled = true;
-        GameObject.FindWithTag("EnemyFormation").GetComponent<EnemyFormationController>().enabled = true;
-        
+        canShoot = true;
     }
 
     public void Victory()
