@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5598440864906038707}
   - component: {fileID: 5598440864906038708}
-  - component: {fileID: -6224334211361484132}
   m_Layer: 0
   m_Name: EnemyFormation
-  m_TagString: Untagged
+  m_TagString: EnemyFormation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,22 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b93e1b23f0f014a8315c4ee71ce647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _facingDirection: 3
-  _speed: 10
---- !u!114 &-6224334211361484132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5598440864906038709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5637db47207ecfe49bf72e61c14abe4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MinTurnDelay: 2
-  MaxTurnDelay: 5
+  facingDirection: 2
+  Speed: 10
+  DircChangeGap: 2
 --- !u!1001 &5598440864762767917
 PrefabInstance:
   m_ObjectHideFlags: 0

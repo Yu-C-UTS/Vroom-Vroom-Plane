@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5598440864906038707}
   - component: {fileID: 5598440864906038708}
-  - component: {fileID: -8194489545831209838}
   m_Layer: 0
   m_Name: AllyFormation
-  m_TagString: Untagged
+  m_TagString: AllyFormation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5598440864906038709}
-  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,7 +35,7 @@ Transform:
   - {fileID: 31164177361962343}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5598440864906038708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,22 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b93e1b23f0f014a8315c4ee71ce647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _facingDirection: 5
-  _speed: 10
---- !u!114 &-8194489545831209838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5598440864906038709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5637db47207ecfe49bf72e61c14abe4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MinTurnDelay: 2
-  MaxTurnDelay: 5
+  facingDirection: 7
+  Speed: 10
+  DircChangeGap: 2
 --- !u!1001 &1903288436614966582
 PrefabInstance:
   m_ObjectHideFlags: 0
