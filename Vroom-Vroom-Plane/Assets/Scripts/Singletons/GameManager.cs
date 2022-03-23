@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public float PlayerSpeed = 5f;
 
-    public int PlayerLife = 5;
+    public int PlayerLife = 4;
     public float PlayerScore = 0f;
 
     public int EnemyDestroyCount = 0;

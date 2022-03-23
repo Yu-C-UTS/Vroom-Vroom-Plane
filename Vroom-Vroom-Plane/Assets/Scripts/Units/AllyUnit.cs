@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AllyUnit : UnitBase
 { 
+    [SerializeField]
+    private Parachute parachutePrefab;
+
     private void Awake() 
     {
         _unitFaction = EUnitFaction.Ally;     
@@ -51,7 +54,8 @@ public class AllyUnit : UnitBase
 
     protected override void Death()
     {
-        print("Death: " + gameObject.name);
+        Parachute parachute = Instantiate(parachutePrefab, transform.position, transform.rotation);
+        parachute.ParachuteDirection = GetComponentInParent<MovementBehavior>().FacingDirection;
         Destroy(gameObject);
     }
 
