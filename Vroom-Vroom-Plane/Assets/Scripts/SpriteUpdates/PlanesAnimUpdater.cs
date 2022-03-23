@@ -8,8 +8,8 @@ public class PlanesAnimUpdater : MonoBehaviour
     private Quaternion rotation = Quaternion.Euler(0, 0, 0);
     void Update()
     {
-        updateAnim(gameObject.GetComponentInParent<MovementBehavior>().getFacingDirect());
-        Debug.Log(gameObject.GetComponentInParent<MovementBehavior>().getFacingDirect());
+        updateAnim(gameObject.GetComponentInParent<MovementBehavior>().FacingDirection);
+        //Debug.Log(gameObject.GetComponentInParent<MovementBehavior>().FacingDirection);
     }
 
     private void updateAnim(DirectionsUtil.Direction facingDirection){

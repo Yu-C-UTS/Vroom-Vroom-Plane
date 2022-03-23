@@ -14,6 +14,11 @@ public static class DirectionsUtil
         return -45 * (int)direction;
     }
 
+    public static Direction RotationToDirection(float rotation)
+    {
+        return (Direction)((Mathf.RoundToInt(rotation / -45) + 8) % 8);
+    }
+
     public static Vector2 DirectionToVector2(Direction direction)
     {
         switch (direction)

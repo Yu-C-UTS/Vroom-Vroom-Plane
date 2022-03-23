@@ -7,8 +7,8 @@ public class Shooting : MonoBehaviour
     private float time = 0.0f; 
     public float interpolationPeriod = 0.5f; //Bullet Delay
     public Transform firePoint;
-    public GameObject bulletPrefab;
-    public float bulletForce = 20f;
+    public Bullet bulletPrefab;
+    public float bulletSpeed = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +29,14 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
          if (time >= interpolationPeriod) 
-            {
-                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-                Rigidbody rb = bullet.GetComponent<Rigidbody>();
-                rb.AddForce(firePoint.up * bulletForce, ForceMode.Impulse);
-                Destroy(bullet, 3f);
-                time = 0;
-            }
+        {
+            Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bullet.BulletDirection = DirectionsUtil.RotationToDirection(bullet.transform.rotation.eulerAngles.z);
+            bullet.bulletSpeed = bulletSpeed;
+            // Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            // rb.AddForce(firePoint.up * bulletSpeed, ForceMode.Impulse);
+            Destroy(bullet, 3f);
+        }
 
     }
 }
