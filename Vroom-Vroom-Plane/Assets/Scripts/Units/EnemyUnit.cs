@@ -13,7 +13,7 @@ public class EnemyUnit : UnitBase
         switch (HitBullet.BulletSource)
         {
             case Bullet.EBulletSource.Player:
-                GameManager.Instance.PlayerScore += 200;
+                GameManager.Instance.PlayerScore += 100;
                 break;
 
             case Bullet.EBulletSource.Enemy:

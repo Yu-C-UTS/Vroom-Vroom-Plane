@@ -21,7 +21,7 @@ public class PlayerUnit : UnitBase
                 break;
 
             case Bullet.EBulletSource.Ally:
-                return;
+                break;
             
             default:
                 throw new System.Exception("Unknown Bullet Source");
