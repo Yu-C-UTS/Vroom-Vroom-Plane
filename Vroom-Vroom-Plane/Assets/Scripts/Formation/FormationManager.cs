@@ -15,7 +15,7 @@ public class FormationManager : MonoBehaviour
 
     void Awake()
     {
-        spawn();
+        spawn(startFacingDirection, startPoint.transform.position);
     }
     // Update is called once per frame
     void Update()
@@ -24,7 +24,7 @@ public class FormationManager : MonoBehaviour
             Debug.Log("Enemyclear");
             if(spawnedlimiter < 1){
                 spawnedlimiter++;
-                Invoke("spawn", 1.0f);
+                StartCoroutine(spawnFormation());
             }
         }
         
@@ -32,15 +32,20 @@ public class FormationManager : MonoBehaviour
             Debug.Log("Allyclear");
             if(spawnedlimiter < 1){
                 spawnedlimiter++;
-                Invoke("spawn", 1.0f);
+                StartCoroutine(spawnFormation());
             }
             
         }
     }
 
-    private void spawn(){
-        formation.GetComponent<MovementBehavior>().FacingDirection = startFacingDirection;
-        Instantiate(formation, startPoint.transform.position, Quaternion.Euler(0, 0, DirectionsUtil.DirectionToRotation(startFacingDirection)));
+    private void spawn(DirectionsUtil.Direction facingDirection, Vector3 startPosition){
+        formation.GetComponent<MovementBehavior>().FacingDirection = facingDirection;
+        Instantiate(formation, startPosition, Quaternion.Euler(0, 0, DirectionsUtil.DirectionToRotation(startFacingDirection)));
         spawnedlimiter = 0;
+    }
+
+    IEnumerator spawnFormation(){
+        yield return new WaitForSeconds(2);
+        spawn(startFacingDirection, startPoint.transform.position);
     }
 }
