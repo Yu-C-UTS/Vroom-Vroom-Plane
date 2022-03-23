@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Friend
+  - EnemyFormation
+  - FriendFormation
+  - AllyFormation
+  - Ally
   layers:
   - Default
   - TransparentFX

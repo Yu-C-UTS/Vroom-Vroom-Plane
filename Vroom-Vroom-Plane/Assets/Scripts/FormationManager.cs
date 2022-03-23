@@ -20,8 +20,16 @@ public class FormationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.FindGameObjectsWithTag("Enemy").Length <= 0){
-            Debug.Log("clear");
+        if(formation.CompareTag("EnemyFormation") && GameObject.FindGameObjectsWithTag("Enemy").Length <= 0){
+            Debug.Log("Enemyclear");
+            if(spawnedlimiter < 1){
+                spawnedlimiter++;
+                Invoke("spawn", 1.0f);
+            }
+        }
+        
+        if(formation.CompareTag("AllyFormation") && GameObject.FindGameObjectsWithTag("Ally").Length <= 0){
+            Debug.Log("Allyclear");
             if(spawnedlimiter < 1){
                 spawnedlimiter++;
                 Invoke("spawn", 1.0f);
