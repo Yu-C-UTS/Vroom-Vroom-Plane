@@ -61,7 +61,7 @@ public class Parachute : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnTriggerEnter(Collider other) 
     {
         PlayerUnit CollidedPlayerUnit = other.gameObject.GetComponent<PlayerUnit>();
         

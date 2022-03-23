@@ -56,7 +56,9 @@ public class AllyUnit : UnitBase
 
     protected override void Death()
     {
-        Parachute parachute = Instantiate(parachutePrefab, transform.position, transform.rotation);
+        Vector3 parachutePos = new Vector3(transform.position.x, transform.position.y, 0);
+        Debug.Log(parachutePos);
+        Parachute parachute = Instantiate(parachutePrefab, parachutePos, transform.rotation);
         parachute.ParachuteDirection = GetComponentInParent<MovementBehavior>().FacingDirection;
         Destroy(gameObject);
     }
