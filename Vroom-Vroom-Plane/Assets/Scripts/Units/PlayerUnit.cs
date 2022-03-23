@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerUnit : UnitBase
 {
-    [SerializeField] private AudioSource hitSfx;
+    [SerializeField] private AudioClip hitSfx;
 
     private int isInvincible = 0;
 
     private void Awake() 
     {
-        GetComponent<PlayerAnimUpdater>().inputmanager = InputManager.Instance;
         _unitFaction = EUnitFaction.Player;     
     }
 
@@ -65,11 +64,10 @@ public class PlayerUnit : UnitBase
         {
             return;
         }
-        
         GameManager.Instance.PlayerLife -= 1;
         GameManager.Instance.QueueRespawn();
         print("Death: " + gameObject.name);
-        //hitSfx.Play();
+        AudioSource.PlayClipAtPoint(hitSfx,transform.position);
         Destroy(gameObject);
     }
 
