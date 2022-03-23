@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eceeaee198b53e4ab056d68b378768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitEffect: {fileID: 0}
+  HitEffect: {fileID: 2409122964211728863, guid: f64e555786eef411487ea8efc8f6fc4d, type: 3}
   _bulletSource: 1
 --- !u!114 &-3310590173850279138
 MonoBehaviour:

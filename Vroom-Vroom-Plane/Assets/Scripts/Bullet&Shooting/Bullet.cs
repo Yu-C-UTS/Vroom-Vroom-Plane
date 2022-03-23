@@ -94,8 +94,8 @@ public class Bullet : MonoBehaviour
 
     private void HitUnit(UnitBase otherUnit)
     {
-        // GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
-        // Destroy(effect, 5f);
+        GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 1f);
 
         otherUnit.BulletHit(this);
 

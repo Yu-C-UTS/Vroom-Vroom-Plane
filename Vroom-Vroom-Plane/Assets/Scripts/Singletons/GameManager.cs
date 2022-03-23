@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public float PlayerScore = 0f;
 
     public int EnemyDestroyCount = 0;
-
+    
     void Awake() 
     {
         if(_instance != null)
