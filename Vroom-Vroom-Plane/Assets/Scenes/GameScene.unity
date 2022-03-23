@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf0cde91fd0f6f4d829256dba8a6cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formation: {fileID: 2586885784047076744, guid: 6feb66be6e2e2694dba7ef66b82d6104, type: 3}
+  formation: {fileID: 5598440864906038709, guid: c19f9f1bd7dbc0e4488d377936143739, type: 3}
   startPoint: {fileID: 354587781}
   startFacingDirection: 7
 --- !u!1 &354587781 stripped
@@ -1643,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035466097260514174, guid: a0a2d2ed7b3f2de4eb0ef7ce28508118, type: 3}
       propertyPath: m_Name
-      value: FriendlySpawnPoint
+      value: AllySpawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0a2d2ed7b3f2de4eb0ef7ce28508118, type: 3}
