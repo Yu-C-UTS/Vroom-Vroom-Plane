@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        PlayerLife = 5;
+        PlayerLife = 4;
         PlayerScore = 0;
         EnemyDestroyCount = 5;
         PlayerSpeed = 5;
@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
 
         if(PlayerLife <= 0)
         {
+            PlayerLife = 0;
             ResetGame();
             PlayerUnit player = Instantiate(PlayerPrefab, default, Quaternion.identity);
             PlayerAnimUpdater playerAnim = player.GetComponent<PlayerAnimUpdater>();
