@@ -50,6 +50,8 @@ public class PlayerUnit : UnitBase
 
     protected override void Death()
     {
+        GameManager.Instance.PlayerLife -= 1;
+        GameManager.Instance.QueueRespawn();
         print("Death: " + gameObject.name);
         Destroy(gameObject);
     }
