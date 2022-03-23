@@ -22,6 +22,16 @@ public class ScoreBoard : MonoBehaviour
         totalScore += 100;
     }
 
+    public void KillBoss()
+    {
+        totalScore += 400;
+    }
+
+    public void PickupParachute()
+    {
+        totalScore += 50;
+    }
+
     void DisplayScore(int scoreToDisplay)
     {
         scoreText.text = scoreToDisplay.ToString();

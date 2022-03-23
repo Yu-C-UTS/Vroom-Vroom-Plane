@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d913bcbe3604a4cbcec451bcec70ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpolationPeriod: 1
+  interpolationPeriod: 0.5
   firePoint: {fileID: 2750916378831880585}
   bulletPrefab: {fileID: -3778157499055720686, guid: 520dab60f9ee4ad45b3e70b7f8d53307, type: 3}
   bulletSpeed: 20

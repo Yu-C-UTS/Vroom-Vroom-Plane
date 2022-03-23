@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-         if (time >= interpolationPeriod) 
+        if (time >= interpolationPeriod) 
         {
             Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bullet.BulletDirection = DirectionsUtil.RotationToDirection(bullet.transform.rotation.eulerAngles.z);
