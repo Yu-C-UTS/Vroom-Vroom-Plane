@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource bgm;
+
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(gameObject);
+        bgm.Play();
     }
 
     public void ResetGame()
@@ -41,6 +44,7 @@ public class GameManager : MonoBehaviour
         PlayerLife = 5;
         PlayerScore = 0;
         EnemyDestroyCount = 0;
+        bgm.Play();
     }
 
     public void QueueRespawn()
