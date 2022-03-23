@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerUnit : UnitBase
 {
+    [SerializeField] private AudioSource hitSfx;
     private void Awake() 
     {
         _unitFaction = EUnitFaction.Player;     
@@ -51,6 +52,7 @@ public class PlayerUnit : UnitBase
     protected override void Death()
     {
         print("Death: " + gameObject.name);
+        hitSfx.Play();
         Destroy(gameObject);
     }
 }

@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
+    [SerializeField] private AudioSource bulletSfx;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class Shooting : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 rb.AddForce(firePoint.up * bulletForce, ForceMode.Impulse);
+                bulletSfx.Play();
                 Destroy(bullet, 3f);
                 time = 0;
             }

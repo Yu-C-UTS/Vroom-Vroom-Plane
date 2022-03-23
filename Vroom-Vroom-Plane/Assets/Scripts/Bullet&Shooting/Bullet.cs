@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public GameObject HitEffect;
 
     //public float damage;
-    
+
     [SerializeField]
     private EBulletSource _bulletSource;
 
@@ -63,7 +63,6 @@ public class Bullet : MonoBehaviour
         // Destroy(effect, 5f);
 
         otherUnit.BulletHit(this);
-
         Destroy(gameObject);
     }
 }
