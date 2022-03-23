@@ -7,6 +7,7 @@ public class PlayerUnit : UnitBase
     [SerializeField] private AudioSource hitSfx;
     private void Awake() 
     {
+        GetComponent<PlayerAnimUpdater>().inputmanager = GameManager.Instance.GetComponent<InputManager>();
         _unitFaction = EUnitFaction.Player;     
     }
     public override void BulletHit(Bullet HitBullet)
@@ -54,7 +55,7 @@ public class PlayerUnit : UnitBase
         GameManager.Instance.PlayerLife -= 1;
         GameManager.Instance.QueueRespawn();
         print("Death: " + gameObject.name);
-        hitSfx.Play();
+        //hitSfx.Play();
         Destroy(gameObject);
     }
 }
