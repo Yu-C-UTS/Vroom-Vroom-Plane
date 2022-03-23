@@ -76,7 +76,7 @@ public class MovementBehavior : MonoBehaviour
     //     _facingDirection = newDirect;
     // }
 
-    // public DirectionsUtil.Direction getFacingDirect(){
-    //     return _facingDirection;
-    // }
+    public DirectionsUtil.Direction getFacingDirect(){
+        return _facingDirection;
+    }
 }
