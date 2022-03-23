@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public int EnemyDestroyCount = 0;
 
+    public bool canShoot = true;
     void Awake() 
     {
         if(_instance != null)
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
+        SceneManager.LoadScene("GameScene");
         PlayerLife = 5;
         PlayerScore = 0;
         EnemyDestroyCount = 0;
@@ -68,5 +71,10 @@ public class GameManager : MonoBehaviour
             PlayerAnimUpdater playerAnim = player.GetComponent<PlayerAnimUpdater>();
             playerAnim.inputmanager = gameObject.GetComponent<InputManager>();
         }
+    }
+
+    public void Victory()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 }
