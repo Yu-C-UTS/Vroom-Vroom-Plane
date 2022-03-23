@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5637db47207ecfe49bf72e61c14abe4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partent: {fileID: 5598440864906038707}
   MinTurnDelay: 2
   MaxTurnDelay: 5
 --- !u!1001 &1903288436614966582
