@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimUpdater : MonoBehaviour
 {
     [SerializeField]
-    private InputManager inputmanager;
+    public InputManager inputmanager;
     private float soomth = 5.0f;
     private Quaternion rotation = Quaternion.Euler(0, 0, 0);
 

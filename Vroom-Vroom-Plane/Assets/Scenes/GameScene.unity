@@ -775,6 +775,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5504048152985402061, guid: 75271e147a25156458af63ab1bf44adc, type: 3}
+      propertyPath: PlayerPrefab
+      value: 
+      objectReference: {fileID: -8534806803190233895, guid: eeb539f0a547b204bb785e472889e071, type: 3}
+    - target: {fileID: 5504048152985402061, guid: 75271e147a25156458af63ab1bf44adc, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: -8534806803190233895, guid: eeb539f0a547b204bb785e472889e071, type: 3}
     - target: {fileID: 5504048152985402062, guid: 75271e147a25156458af63ab1bf44adc, type: 3}
       propertyPath: m_Name
       value: Managers
