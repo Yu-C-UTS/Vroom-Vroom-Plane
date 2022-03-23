@@ -2,24 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MovementBehavior))]
 public class Bullet : MonoBehaviour
 {
     public enum EBulletSource
     {Player, Enemy, Ally}
 
     public GameObject HitEffect;
-
+    
     //public float damage;
     
     [SerializeField]
     private EBulletSource _bulletSource;
-
 
     public EBulletSource BulletSource
     {
         get
         {
             return _bulletSource;
+        }
+    }
+
+    private MovementBehavior movementBehavior;
+
+    public DirectionsUtil.Direction BulletDirection
+    {
+        get
+        {
+            return movementBehavior.FacingDirection;
+        }
+        set
+        {
+            movementBehavior.FacingDirection = value;
+        }
+    }
+
+    public float bulletSpeed
+    {
+        get
+        {
+            return movementBehavior.Speed;
+        }
+        set
+        {
+            movementBehavior.Speed = value;
+        }
+    }
+
+    private void Awake() 
+    {
+        movementBehavior = GetComponent<MovementBehavior>();
+        if(movementBehavior == null)
+        {
+            Debug.LogError("No Movement Behaviour On Bullet");
         }
     }
 

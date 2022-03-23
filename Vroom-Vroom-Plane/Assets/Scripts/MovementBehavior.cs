@@ -19,7 +19,19 @@ public class MovementBehavior : MonoBehaviour
     }
 
     [SerializeField]
-    private float Speed = 10f;
+    private float _speed = 10f;
+    public float Speed
+    {
+        get
+        {
+            return _speed;
+        }
+        set
+        {
+            _speed = value;
+        }
+    }
+
     // [SerializeField]
     // private float DircChangeGap;
 
@@ -43,7 +55,7 @@ public class MovementBehavior : MonoBehaviour
         //     DircChangeTimer = DircChangeGap;
         // }
 
-        movementVector = DirectionsUtil.DirectionToVector2(_facingDirection) * Speed * Time.deltaTime;
+        movementVector = DirectionsUtil.DirectionToVector2(_facingDirection) * _speed * Time.deltaTime;
         if(Vector3.Distance(transform.position, new Vector3(0,0,0)) > 30){
             Destroy(gameObject);
         }

@@ -9,7 +9,7 @@ public class PlanesAnimUpdater : MonoBehaviour
     void Update()
     {
         updateAnim(gameObject.GetComponentInParent<MovementBehavior>().FacingDirection);
-        Debug.Log(gameObject.GetComponentInParent<MovementBehavior>().FacingDirection);
+        //Debug.Log(gameObject.GetComponentInParent<MovementBehavior>().FacingDirection);
     }
 
     private void updateAnim(DirectionsUtil.Direction facingDirection){
