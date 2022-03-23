@@ -11,6 +11,9 @@ public class FormationManager : MonoBehaviour
     private DirectionsUtil.Direction startFacingDirection;
     private int spawnedlimiter = 0;
 
+    private Vector3 newPos;
+    private DirectionsUtil.Direction newDirect;
+
 
 
     void Awake()
