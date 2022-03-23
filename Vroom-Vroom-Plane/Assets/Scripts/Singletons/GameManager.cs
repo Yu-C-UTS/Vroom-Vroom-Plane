@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             playerAnim.inputmanager = gameObject.GetComponent<InputManager>();
         }
 
-        if(PlayerLife == 0)
+        if(PlayerLife <= 0)
         {
             ResetGame();
             PlayerUnit player = Instantiate(PlayerPrefab, default, Quaternion.identity);
