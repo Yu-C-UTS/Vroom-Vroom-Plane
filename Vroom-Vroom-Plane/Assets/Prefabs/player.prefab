@@ -149,8 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interpolationPeriod: 0.5
   firePoint: {fileID: 210219439688658306}
-  bulletPrefab: {fileID: 3466249109974079377, guid: 5d496e4239ed6ee4083faaac0355bd94, type: 3}
-  bulletForce: 20
+  bulletPrefab: {fileID: 194351545, guid: 5d496e4239ed6ee4083faaac0355bd94, type: 3}
+  bulletSpeed: 20
 --- !u!114 &1594611075
 MonoBehaviour:
   m_ObjectHideFlags: 0

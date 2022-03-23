@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5598440864906038707}
   - component: {fileID: 5598440864906038708}
+  - component: {fileID: 45199345660434656}
   m_Layer: 0
   m_Name: AllyFormation
   m_TagString: AllyFormation
@@ -48,9 +49,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b93e1b23f0f014a8315c4ee71ce647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingDirection: 7
-  Speed: 10
-  DircChangeGap: 2
+  _facingDirection: 7
+  _speed: 10
+--- !u!114 &45199345660434656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5598440864906038709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5637db47207ecfe49bf72e61c14abe4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinTurnDelay: 2
+  MaxTurnDelay: 5
 --- !u!1001 &1903288436614966582
 PrefabInstance:
   m_ObjectHideFlags: 0

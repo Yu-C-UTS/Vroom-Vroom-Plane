@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 8730738673013871343}
   - component: {fileID: 8730738673013871336}
   - component: {fileID: -7992718511234463164}
-  - component: {fileID: -5753440908358575930}
-  - component: {fileID: -6298464691651167996}
-  - component: {fileID: 8730738673013871338}
   - component: {fileID: -4683475804053983891}
+  - component: {fileID: 8730738673013871338}
+  - component: {fileID: -6298464691651167996}
   m_Layer: 0
   m_Name: Ally
   m_TagString: Ally
@@ -119,28 +118,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8730738673013871339}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.0625, y: 1.9375, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-5753440908358575930
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8730738673013871339}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &-6298464691651167996
+--- !u!114 &-4683475804053983891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8730738673013871339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cc57a99bc9408244b6b632ec8154380, type: 3}
+  m_Script: {fileID: 11500000, guid: da7f03e9f5a5e734887b77e869359e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8730738673013871338
@@ -166,9 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interpolationPeriod: 1
   firePoint: {fileID: 8730738673487948777}
-  bulletPrefab: {fileID: 3466249109974079377, guid: b01dd885de1125049a62fdb213c8870e, type: 3}
-  bulletForce: 20
---- !u!114 &-4683475804053983891
+  bulletPrefab: {fileID: -3778157499055720686, guid: b01dd885de1125049a62fdb213c8870e, type: 3}
+  bulletSpeed: 20
+--- !u!114 &-6298464691651167996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8730738673013871339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da7f03e9f5a5e734887b77e869359e69, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cc57a99bc9408244b6b632ec8154380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8730738673487948778

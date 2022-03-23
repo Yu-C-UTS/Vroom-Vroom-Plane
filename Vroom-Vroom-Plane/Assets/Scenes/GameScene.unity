@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   formation: {fileID: 5598440864906038709, guid: edc74b164ad030944b697f22275d42a5, type: 3}
   startPoint: {fileID: 8315891704573056636}
-  startFacingDirection: 2
+  startFacingDirection: 3
 --- !u!114 &331280889
 MonoBehaviour:
   m_ObjectHideFlags: 0
