@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    private float time = 0.0f; 
-    public float interpolationPeriod = 0.5f; //Bullet Delay
+    private float fireCooldown; 
+    public float interpolationPeriod = 3f; //Bullet Delay
     public Transform firePoint;
     public Bullet bulletPrefab;
     public float bulletSpeed = 20f;
+
+    [SerializeField]
+    private float barrageFireDelay = 0.5f;
+    [SerializeField]
+    private int barrageFireCount = 2;
+    private float barrageFireCooldown;
+    private int remainingBarrageCount;
 
     // Start is called before the first frame update
     void Start()
@@ -19,24 +26,41 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        fireCooldown -= Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Shoot();
+            FireCheck();
+        }
+
+        if(remainingBarrageCount > 0)
+        {
+            barrageFireCooldown -= Time.deltaTime;
+            if(barrageFireCooldown <= 0)
+            {
+                Fire();
+                barrageFireCooldown += barrageFireDelay;
+            }
         }
     }
 
-    void Shoot()
+    void FireCheck()
     {
-         if (time >= interpolationPeriod) 
+        if (fireCooldown <= 0) 
         {
-            Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            bullet.BulletDirection = DirectionsUtil.RotationToDirection(bullet.transform.rotation.eulerAngles.z);
-            bullet.bulletSpeed = bulletSpeed;
-            // Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            // rb.AddForce(firePoint.up * bulletSpeed, ForceMode.Impulse);
-            Destroy(bullet, 3f);
+            remainingBarrageCount = barrageFireCount;
+            fireCooldown = interpolationPeriod;
         }
+    }
 
+    private void Fire()
+    {
+        remainingBarrageCount -= 1;
+
+        Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.BulletDirection = DirectionsUtil.RotationToDirection(bullet.transform.rotation.eulerAngles.z);
+        bullet.bulletSpeed = bulletSpeed;
+        // Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        // rb.AddForce(firePoint.up * bulletSpeed, ForceMode.Impulse);
+        Destroy(bullet, 3f);
     }
 }
