@@ -35,9 +35,15 @@ public class GameManager : MonoBehaviour
     public int PlayerLife = 5;
     public float PlayerScore = 0f;
 
-    public int EnemyDestroyCount = 0;
+    public int EnemyDestroyCount = 5;
 
     public bool canShoot = true;
+
+    public float VerticalSpawnEdge;
+    public float HorizontalSpawnEdge;
+
+    private bool gameWon = false;
+    
     void Awake() 
     {
         if(_instance != null)
@@ -53,11 +59,14 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene("GameScene");
         PlayerLife = 5;
         PlayerScore = 0;
         EnemyDestroyCount = 5;
         PlayerSpeed = 5;
+        gameWon = false;
+
+        SceneManager.LoadScene("GameScene");
+
         bgm.Play();
     }
 
@@ -94,6 +103,11 @@ public class GameManager : MonoBehaviour
 
     public void QueueVictory()
     {
+        if(gameWon)
+        {
+            return;
+        }
+        gameWon = true;
         StartCoroutine(DelayVictory());
     }
 
@@ -101,7 +115,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Victory");
         yield return new WaitForSeconds(2);
-
         Victory();
     }
 

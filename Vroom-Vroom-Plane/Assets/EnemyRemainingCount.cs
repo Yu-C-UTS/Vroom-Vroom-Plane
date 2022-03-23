@@ -16,7 +16,7 @@ public class EnemyRemainingCount : MonoBehaviour
         DisplayEnemyCount(GameManager.Instance.EnemyDestroyCount);
         if(GameManager.Instance.EnemyDestroyCount <= 0)
         {
-            GameManager.Instance.QueueVictory();
+            //GameManager.Instance.QueueVictory();
         }
     }
 

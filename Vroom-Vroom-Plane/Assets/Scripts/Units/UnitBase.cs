@@ -16,6 +16,15 @@ public class UnitBase : MonoBehaviour
         }
     }
 
+    private bool _isVisible = false;
+    public bool IsVisible
+    {
+        get
+        {
+            return _isVisible;
+        }
+    }
+
     public virtual void BulletHit(Bullet HitBullet)
     {
         Debug.LogWarning("Bullet hit function not overwritten");
@@ -29,5 +38,15 @@ public class UnitBase : MonoBehaviour
     protected virtual void Death()
     {
         Debug.LogWarning("Death function not overwritten");
+    }
+
+    private void OnBecameInvisible() 
+    {
+        _isVisible = false;
+    }
+
+    private void OnBecameVisible() 
+    {
+        _isVisible = true;    
     }
 }

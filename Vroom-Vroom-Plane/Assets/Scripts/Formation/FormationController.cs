@@ -17,6 +17,18 @@ public class FormationController : MonoBehaviour
     private float soomth = 1.0f;
     private DirectionsUtil.Direction NextFacingDirection;
 
+
+    [SerializeField]
+    protected UnitBase respawnFormationUnitPrefab;
+    [SerializeField]
+    protected float formationUnitSeparation;
+    [SerializeField]
+    protected int formationSize;
+    protected UnitBase[] formationUnits;
+
+    const float formationRespawnViewDelay = 3f;
+    private float formationRespawnCooldown = 0;
+
     private void Awake() 
     {
         movementBehavior = GetComponent<MovementBehavior>();
@@ -28,6 +40,9 @@ public class FormationController : MonoBehaviour
 
     private void Start() 
     {
+        formationUnits = new UnitBase[formationSize];
+        respawnFormation();
+
         ResetTurnTimer();
         NextFacingDirection = movementBehavior.FacingDirection;
     }
@@ -36,6 +51,21 @@ public class FormationController : MonoBehaviour
     {
         TurnUpdate();
         UpdateFormation();
+
+        if(isAnyFormationUnitVisible() == false)
+        {
+            formationRespawnCooldown -= Time.deltaTime;
+            if(formationRespawnCooldown < 0)
+            {
+                respawnFormation();
+                repositionFormation();
+                formationRespawnCooldown = formationRespawnViewDelay;
+            }
+        }
+        else
+        {
+            formationRespawnCooldown = formationRespawnViewDelay;
+        }
     }
 
     private void TurnUpdate()
@@ -86,5 +116,70 @@ public class FormationController : MonoBehaviour
         NextFacingDirection = movementBehavior.FacingDirection;
         Quaternion rotation = Quaternion.Euler(partent.rotation.x, partent.rotation.y, DirectionsUtil.DirectionToRotation(NextFacingDirection));
         partent.rotation = Quaternion.Slerp(partent.rotation, rotation,  Time.deltaTime * soomth);
+    }
+
+    private bool isAnyFormationUnitVisible()
+    {
+        foreach (UnitBase unit in formationUnits)
+        {
+            if(unit.IsVisible)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void repositionFormation()
+    {
+        switch (NextFacingDirection)
+        {
+            case DirectionsUtil.Direction.Forward:
+                transform.position = new Vector3(0, -GameManager.Instance.VerticalSpawnEdge, 0);
+                break;
+
+            case DirectionsUtil.Direction.ForwardRight:
+                transform.position = new Vector3(-GameManager.Instance.HorizontalSpawnEdge, -GameManager.Instance.VerticalSpawnEdge, 0);
+                break;
+
+            case DirectionsUtil.Direction.Right:
+                transform.position = new Vector3(-GameManager.Instance.HorizontalSpawnEdge, 0, 0);
+                break;
+
+            case DirectionsUtil.Direction.BackwardsRight:
+                transform.position = new Vector3(-GameManager.Instance.HorizontalSpawnEdge, GameManager.Instance.VerticalSpawnEdge, 0);
+                break;
+
+            case DirectionsUtil.Direction.Backwards:
+                transform.position = new Vector3(0, GameManager.Instance.VerticalSpawnEdge, 0);
+                break;
+
+            case DirectionsUtil.Direction.BackwardsLeft:
+                transform.position = new Vector3(GameManager.Instance.HorizontalSpawnEdge, GameManager.Instance.VerticalSpawnEdge, 0);
+                break;
+
+            case DirectionsUtil.Direction.Left:
+                transform.position = new Vector3(GameManager.Instance.HorizontalSpawnEdge, 0, 0);
+                break;
+
+            case DirectionsUtil.Direction.ForwardLeft:
+                transform.position = new Vector3(GameManager.Instance.HorizontalSpawnEdge, -GameManager.Instance.VerticalSpawnEdge, 0);
+                break;
+
+            default:
+                transform.position = Vector3.zero;
+                break;
+        }
+    }
+
+    protected virtual void respawnFormation()
+    {
+        for (int i = 0; i < formationSize; i++)
+        {
+            if(formationUnits[i] == null)
+            {
+                formationUnits[i] = Instantiate(respawnFormationUnitPrefab, transform.TransformPoint(new Vector3( (i * formationUnitSeparation) - ((formationSize - 1) * formationUnitSeparation / 2), 0, 0)), Quaternion.identity, transform);
+            }
+        }
     }
 }

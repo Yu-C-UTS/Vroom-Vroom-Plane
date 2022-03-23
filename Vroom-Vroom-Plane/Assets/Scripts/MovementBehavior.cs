@@ -56,15 +56,15 @@ public class MovementBehavior : MonoBehaviour
         // }
 
         movementVector = DirectionsUtil.DirectionToVector2(_facingDirection) * _speed * Time.deltaTime;
-        if(Vector3.Distance(transform.position, new Vector3(0,0,0)) > 30){
-            // Destroy(gameObject);
-            gameObject.SetActive(false);
+        if(Vector3.Distance(transform.position, new Vector3(0,0,0)) > 100){
+            Destroy(gameObject);
+            //gameObject.SetActive(false);
         }
     }
 
     void OnBecameInvisible(){
         // Destroy(gameObject);
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     void LateUpdate() 

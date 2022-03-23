@@ -100,4 +100,9 @@ public class Bullet : MonoBehaviour
         otherUnit.BulletHit(this);
         Destroy(gameObject);
     }
+
+    private void OnBecameInvisible() 
+    {
+        Destroy(gameObject);
+    }
 }

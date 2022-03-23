@@ -120,9 +120,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
-        width: 127
-        height: 64
+        y: 321
+        width: 64
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: boss-sheet_1
       rect:
         serializedVersion: 2
-        x: 168
-        y: 16
-        width: 127
-        height: 64
+        x: 16
+        y: 169
+        width: 64
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: boss-sheet_2
       rect:
         serializedVersion: 2
-        x: 320
-        y: 16
-        width: 127
-        height: 64
+        x: 16
+        y: 17
+        width: 64
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
