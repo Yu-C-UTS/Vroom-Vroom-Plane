@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Lives : MonoBehaviour
 {
-    [SerializeField]
-    private GameManager gameManager;
-
     public Text liveText;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +13,7 @@ public class Lives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DisplayLive(gameManager.PlayerLife);
+        DisplayLive(GameManager.Instance.PlayerLife);
     }
 
         void DisplayLive(int liveToDisplay)

@@ -56,10 +56,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameScene");
         PlayerLife = 5;
         PlayerScore = 0;
-        EnemyDestroyCount = 0;
+        EnemyDestroyCount = 5;
         PlayerSpeed = 5;
         bgm.Play();
     }
+
 
     public void QueueRespawn()
     {
@@ -89,6 +90,19 @@ public class GameManager : MonoBehaviour
             PlayerAnimUpdater playerAnim = player.GetComponent<PlayerAnimUpdater>();
             playerAnim.inputmanager = gameObject.GetComponent<InputManager>();
         }
+    }
+
+    public void QueueVictory()
+    {
+        StartCoroutine(DelayVictory());
+    }
+
+    public IEnumerator DelayVictory()
+    {
+        Debug.Log("Victory");
+        yield return new WaitForSeconds(2);
+
+        Victory();
     }
 
     public void Victory()

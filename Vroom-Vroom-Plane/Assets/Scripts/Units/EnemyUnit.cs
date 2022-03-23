@@ -14,6 +14,7 @@ public class EnemyUnit : UnitBase
         {
             case Bullet.EBulletSource.Player:
                 GameManager.Instance.PlayerScore += 100;
+                GameManager.Instance.EnemyDestroyCount -= 1;
                 break;
 
             case Bullet.EBulletSource.Enemy:
