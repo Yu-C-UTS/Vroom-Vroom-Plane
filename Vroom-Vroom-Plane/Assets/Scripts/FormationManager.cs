@@ -31,7 +31,7 @@ public class FormationManager : MonoBehaviour
     }
 
     private void spawn(){
-        formation.GetComponent<MovementBehavior>().setFacingDirect(startFacingDirection);
+        formation.GetComponent<MovementBehavior>().FacingDirection = startFacingDirection;
         Instantiate(formation, startPoint.transform.position, Quaternion.Euler(0, 0, DirectionsUtil.DirectionToRotation(startFacingDirection)));
         spawnedlimiter = 0;
     }
