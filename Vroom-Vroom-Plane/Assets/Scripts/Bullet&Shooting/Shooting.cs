@@ -17,6 +17,9 @@ public class Shooting : MonoBehaviour
     private float barrageFireCooldown;
     private int remainingBarrageCount;
 
+    [SerializeField]
+    private AudioSource bulletSfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +68,7 @@ public class Shooting : MonoBehaviour
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.BulletDirection = DirectionsUtil.RotationToDirection(bullet.transform.rotation.eulerAngles.z);
         bullet.bulletSpeed = bulletSpeed;
+        bulletSfx.Play();
         // Rigidbody rb = bullet.GetComponent<Rigidbody>();
         // rb.AddForce(firePoint.up * bulletSpeed, ForceMode.Impulse);
         Destroy(bullet, 3f);

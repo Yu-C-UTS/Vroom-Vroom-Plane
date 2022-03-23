@@ -55,7 +55,7 @@ public class PlayerUnit : UnitBase
         GameManager.Instance.PlayerLife -= 1;
         GameManager.Instance.QueueRespawn();
         print("Death: " + gameObject.name);
-        //hitSfx.Play();
+        hitSfx.Play();
         Destroy(gameObject);
     }
 }
