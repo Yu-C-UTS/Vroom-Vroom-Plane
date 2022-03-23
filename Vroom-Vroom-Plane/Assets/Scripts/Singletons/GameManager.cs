@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private AudioSource bgm;
+    [SerializeField] private AudioSource Wining;
+    [SerializeField] private AudioSource Death;
 
     private static GameManager _instance;
     public static GameManager Instance
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void QueueRespawn()
     {
+        DeathSequence();
         StartCoroutine(DelayRespawn());
     }
     public IEnumerator DelayRespawn()
@@ -83,8 +86,17 @@ public class GameManager : MonoBehaviour
         RespawnPlayer();
     }
 
+    public void DeathSequence(){
+        if(PlayerLife <= 0){
+            bgm.Stop();
+            Death.Play();
+        }
+        pauseGame();
+    }
+
     private void RespawnPlayer()
     {
+        resumeGame();
         if(PlayerLife > 0)
         {
             PlayerUnit player = Instantiate(PlayerPrefab, default, Quaternion.identity);
@@ -115,8 +127,24 @@ public class GameManager : MonoBehaviour
     public IEnumerator DelayVictory()
     {
         Debug.Log("Victory");
+        bgm.Stop();
+        Wining.Play();
+        pauseGame();
         yield return new WaitForSeconds(2);
         Victory();
+    }
+
+    private void pauseGame(){
+        gameObject.GetComponent<InputManager>().enabled = false;
+        GameObject.FindWithTag("AllyFormation").GetComponent<FormationController>().enabled = false;
+        GameObject.FindWithTag("EnemyFormation").GetComponent<EnemyFormationController>().enabled = false;
+    }
+
+    private void resumeGame(){
+        gameObject.GetComponent<InputManager>().enabled = true;
+        GameObject.FindWithTag("AllyFormation").GetComponent<FormationController>().enabled = true;
+        GameObject.FindWithTag("EnemyFormation").GetComponent<EnemyFormationController>().enabled = true;
+        
     }
 
     public void Victory()
